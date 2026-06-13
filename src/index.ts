@@ -4,9 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const env = process.env
 
-const upstream = new Upstream(env.UPSTREAM_API_KEY!, {
-    host: "http://localhost:3001"
-});
+const upstream = new Upstream(env.UPSTREAM_API_KEY!);
 
 async function main() {
     const result = await upstream.events.ingest(
